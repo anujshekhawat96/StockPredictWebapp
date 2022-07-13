@@ -21,7 +21,7 @@ from datetime import date
 from plotly import graph_objs as go
 
 
-START = '2015-01-01'
+START = '2016-01-01'
 
 TODAY= date.today().strftime("%Y-%m-%d")
 
@@ -51,7 +51,7 @@ data = load_data(selected_stocks)
 data_load_state.text("Data Loading is Done...Thanks of your patience!")
 
 ##DEscribing data 
-st.subheader('Data from 2015 to Today')
+st.subheader('Data from 2016 to Today')
 
 st.write(data.describe())
 
@@ -61,7 +61,7 @@ def plot_raw_data():
 	fig = go.Figure()
 	fig.add_trace(go.Scatter(x=data['Date'], y=data['Open'], name="stock_open"))
 	fig.add_trace(go.Scatter(x=data['Date'], y=data['Close'], name="stock_close"))
-	fig.layout.update(title_text='Time Series data with Rangeslider', xaxis_rangeslider_visible=True)
+	fig.layout.update(title_text='Time Series data', xaxis_rangeslider_visible=True)
 	st.plotly_chart(fig)
 	
 plot_raw_data()
