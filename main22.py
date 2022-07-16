@@ -33,10 +33,10 @@ stocks = st.text_input('Enter Stock Ticker', 'AAPL')
 #stocks = ('AAPL','GOOG','MSFT')
 selected_stocks = stocks 
 
-n_years = st.number_input('Enter Years of Predictions',1)
+n_years = st.number_input('Enter Days of Predictions',30)
 
 #n_years = st.slider("Years of prediction:",1,4)
-period = n_years * 365
+period = 365
 
 @st.cache
 def load_data(ticker):
@@ -84,7 +84,7 @@ forecast = m.predict(future)
 st.subheader('Forecast data')
 st.write(forecast.describe())
     
-st.write(f'Forecast plot for {n_years} years')
+st.write(f'Forecast plot for {n_years} Days')
 fig1 = plot_plotly(m, forecast)
 st.plotly_chart(fig1)
 
@@ -92,3 +92,9 @@ st.write("Forecast components")
 fig2 = m.plot_components(forecast)
 st.write(fig2)
 
+
+##performance matrix 
+
+from prophet.diagnostics import performance_metrics
+df_p = performance_metrics(df_cv)
+df_p.head()
