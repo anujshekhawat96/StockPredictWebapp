@@ -36,7 +36,7 @@ selected_stocks = stocks
 n_years = st.number_input('Enter Days of Predictions',30)
 
 #n_years = st.slider("Years of prediction:",1,4)
-period = 365
+period = 1
 
 @st.cache
 def load_data(ticker):
