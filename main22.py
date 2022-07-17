@@ -33,10 +33,10 @@ stocks = st.text_input('Enter Stock Ticker', 'AAPL')
 #stocks = ('AAPL','GOOG','MSFT')
 selected_stocks = stocks 
 
-n_years = st.number_input('Enter Days of Predictions',30)
+n_days = st.number_input('Enter Days of Predictions',30)
 
 #n_years = st.slider("Years of prediction:",1,4)
-period = 1 * n_years
+period = 1 * n_days
 
 @st.cache
 def load_data(ticker):
@@ -93,8 +93,12 @@ fig2 = m.plot_components(forecast)
 st.write(fig2)
 
 
-##performance matrix 
 
-from prophet.diagnostics import performance_metrics
-df_p = performance_metrics(df_cv)
-df_p.head()
+
+
+# ##performance matrix 
+
+# from prophet.diagnostics import performance_metrics
+# df_p = performance_metrics(df_cv)
+# df_p.head()
+
