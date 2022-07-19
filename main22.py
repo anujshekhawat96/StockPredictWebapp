@@ -106,7 +106,7 @@ st.write(fig2)
 
 tail_data =forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail()
 
-st.write(tail_data.describe())
+st.write(tail_data)
 
 ###MERGING OF FINANCE APP TOO 
 
