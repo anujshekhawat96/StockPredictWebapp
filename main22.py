@@ -104,6 +104,9 @@ st.write(fig2)
 # df_p = performance_metrics(df_cv)
 # df_p.head()
 
+tail_data =forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail()
+
+st.write(tail_data.describe())
 
 ###MERGING OF FINANCE APP TOO 
 
