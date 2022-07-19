@@ -26,7 +26,7 @@ START = '2016-01-01'
 TODAY= date.today().strftime("%Y-%m-%d")
 
 
-st.title('Stock Prediction App')
+st.title('Stock Price Prediction & Fin Info App')
 
 stocks = st.text_input('Enter Stock Ticker', 'AAPL')
 
