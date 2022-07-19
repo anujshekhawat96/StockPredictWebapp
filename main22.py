@@ -104,3 +104,124 @@ st.write(fig2)
 # df_p = performance_metrics(df_cv)
 # df_p.head()
 
+
+###MERGING OF FINANCE APP TOO 
+
+##TICKER VALUE
+ticker_pass = yf.Ticker(selected_stocks)
+
+
+
+
+
+##SHOW MAJOR HOLDERS
+
+major_hold = ticker_pass.major_holders
+st.subheader('Stakeholders Distribution')
+st.write(major_hold)
+
+csv = major_hold.to_csv(index=False)
+
+st.download_button('Download Stakeholders Data', csv, file_name='StakeholderDistributionData.csv')
+
+
+#major_hold.to_excel('major_holdings.xlsx', sheet_name='majorholdings', index=False)
+
+# show institutional holders
+inst_hold = ticker_pass.institutional_holders
+st.subheader('Institutional Stakeholders')
+st.write(inst_hold)
+
+csv1 = inst_hold.to_csv(index=False)
+
+st.download_button('Download Institutional Stakeholders Data', csv1, file_name='InstitutionalStakeholderData.csv')
+
+##SHow financials 
+quaterly_fin = ticker_pass.quarterly_financials
+st.subheader('Quaterly Financials')
+st.write(quaterly_fin.describe())
+
+csv2 = quaterly_fin.to_csv(index=False)
+
+st.download_button('Download Quaterly Financials Data', csv2, file_name='QuaterlyFinancialData.csv')
+
+
+
+# show balance sheet
+
+st.subheader('Quaterly Balance Sheet')
+balancesheet_quater = ticker_pass.quarterly_balance_sheet
+
+st.write(balancesheet_quater.describe())
+
+csv3 = balancesheet_quater.to_csv(index=False)
+
+st.download_button('Download Quaterly Balance Sheet Data', csv3, file_name='QuaterlyBalanceSheetData.csv')
+
+# show cashflow
+
+st.subheader('Quaterly CashFlow')
+quatercash = ticker_pass.quarterly_cashflow
+st.write(quatercash.describe())
+
+csv4 = quatercash.to_csv(index=False)
+
+st.download_button('Download Quaterly Cashflow', csv4, file_name='QuaterlyCashFlow.csv')
+
+
+
+# show earnings
+st.subheader('Quaterly Earnings')
+earn = ticker_pass.quarterly_earnings
+st.write(earn)
+
+csv5 = earn.to_csv(index=False)
+
+st.download_button('Download Quaterly Earning Data', csv5, file_name='QuaterlyEarning.csv')
+
+
+# show analysts recommendations
+st.subheader('Analyst Recommendations')
+recom = ticker_pass.recommendations
+st.write(recom)
+
+csv6 = recom.to_csv(index=False)
+
+st.download_button('Download Analyst Recommendation Data', csv6, file_name='AnalystRecommendation.csv')
+
+
+# show dividend nd stock split
+st.subheader('Dividends and Stock Splits')
+divi = ticker_pass.actions
+st.write(divi)
+
+csv7 = divi.to_csv(index=False)
+
+st.download_button('Download Dividend and Stock Splits Data', csv7, file_name='StockSplit.csv')
+
+
+##Non Fin Info
+
+emp = ticker_pass.info['fullTimeEmployees']
+st.subheader('Company Non Financial Info')
+
+
+sector = ticker_pass.info['sector']
+addrs = ticker_pass.info['address1']
+hqcity = ticker_pass.info['city']
+hqcountry = ticker_pass.info['country']
+
+
+web = ticker_pass.info['website']
+
+
+
+st.write('Full Time Employees: ', emp)
+st.write('Sector: ', sector)
+st.write('Address: ', addrs)
+st.write('City: ', hqcity)
+st.write('Country: ', hqcountry)
+
+st.write('Website: ', web)
+
+
