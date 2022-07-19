@@ -101,12 +101,12 @@ st.write(fig2)
 # ##performance matrix 
 
 # from prophet.diagnostics import performance_metrics
-metric_df = forecast.set_index('ds')[['yhat']].join(df.set_index('ds').y).reset_index()
-metric_df.tail()
-metric_df.dropna(inplace=True)
-r2 = r2_score(metric_df.y, metric_df.yhat)
-mse = mean_squared_error(metric_df.y, metric_df.yhat)
-mae =mean_absolute_error(metric_df.y, metric_df.yhat)
+# metric_df = forecast.set_index('ds')[['yhat']].join(df.set_index('ds').y).reset_index()
+# metric_df.tail()
+# metric_df.dropna(inplace=True)
+# r2 = r2_score(metric_df.y, metric_df.yhat)
+# mse = mean_squared_error(metric_df.y, metric_df.yhat)
+# mae =mean_absolute_error(metric_df.y, metric_df.yhat)
 # df_p = performance_metrics(df_cv)
 # df_p.head()
 
@@ -115,8 +115,8 @@ tail_data =forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
 
 st.write(tail_data)
 
-st.write(r2)
-st.write(mse)
+# st.write(r2)
+# st.write(mse)
 
 
 
