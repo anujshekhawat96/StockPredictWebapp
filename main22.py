@@ -48,7 +48,7 @@ def load_data(ticker):
 data_load_state = st.text("Load data...")
 
 data = load_data(selected_stocks)
-data_load_state.text("Data Loading is Done...Thanks of your patience!")
+data_load_state.text("Data Loading is Done...Thanks for your patience!")
 
 ##DEscribing data 
 st.subheader('Data from 2016 to Today')
@@ -104,7 +104,7 @@ st.write(fig2)
 # df_p = performance_metrics(df_cv)
 # df_p.head()
 
-tail_data =forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail()
+tail_data =forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
 
 st.write(tail_data)
 
