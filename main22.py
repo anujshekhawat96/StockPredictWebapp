@@ -142,7 +142,7 @@ st.download_button('Download Institutional Stakeholders Data', csv1, file_name='
 ##SHow financials 
 quaterly_fin = ticker_pass.quarterly_financials
 st.subheader('Quaterly Financials')
-st.write(quaterly_fin.describe())
+st.write(quaterly_fin)
 
 csv2 = quaterly_fin.to_csv(index=False)
 
