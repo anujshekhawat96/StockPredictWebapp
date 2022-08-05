@@ -53,7 +53,7 @@ data_load_state.text("Data Loading is Done...Thanks for your patience!")
 ##DEscribing data 
 st.subheader('Data from 2016 to Today')
 
-st.write(data.describe())
+st.write(data)
 
 
 # Plot raw data
