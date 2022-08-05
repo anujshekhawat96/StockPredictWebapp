@@ -23,7 +23,7 @@ from plotly import graph_objs as go
 
 START = '2016-01-01'
 
-TODAY= '2018-12-30'
+TODAY= date.today().strftime("%Y-%m-%d")
 
 
 st.title('Company Stock Price Prediction & Financials Info App')
@@ -51,7 +51,7 @@ data = load_data(selected_stocks)
 data_load_state.text("Data Loading is Done...Thanks for your patience!")
 
 ##DEscribing data 
-st.subheader('Data from 2016 to 2018')
+st.subheader('Data from 2016 to Today')
 
 st.write(data.describe())
 
