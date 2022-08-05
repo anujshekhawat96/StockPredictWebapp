@@ -82,7 +82,7 @@ forecast = m.predict(future)
 
 # Show and plot forecast
 st.subheader('Forecast data')
-st.write(forecast.describe())
+st.write(forecast)
     
 st.write(f'Forecast plot for {n_days} Days')
 fig1 = plot_plotly(m, forecast)
